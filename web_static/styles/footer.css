@@ -9,3 +9,9 @@ footer {
 	justify-content: center;
 	align-items: center;
 }
+p {
+    max-width: 100%;
+    margin: auto;
+    padding-left: 50px;
+    text-align: center;
+}

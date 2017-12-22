@@ -89,3 +89,9 @@ class DBStorage:
             for cls in classes.values():
                 total += self.__session.query(cls).count()
         return total
+
+    def get_short(self, cls, long):
+        """retrieve a short_url from a website name"""
+        if cls == "Website":
+            result = self.__session.query(Website).filter(Website.name == long).first()
+            return result

@@ -68,7 +68,10 @@ class DBStorage:
 
     def get(self, cls, id):
         """Retrieve an object"""
-        if cls is not None and type(cls) is str and id is not None and\
+        if cls is "Website" and id is not None and type(id) is str:
+            return self.__session.query(Website).filter(Website.
+                                                        short_url == id).first()
+        elif cls is not None and type(cls) is str and id is not None and\
            type(id) is str and cls in classes:
             cls = classes[cls]
             result = self.__session.query(cls).filter(cls.id == id).first()

@@ -8,6 +8,8 @@ app = Flask('web_flask')
 @app.route('/<string:short_url>', methods=['GET'], strict_slashes=False)
 def get_redirection(short_url):
     """redirect to long url"""
+    if not short_url:
+        return "<h1>Hello World</h1>"
     website = storage.get("Website", short_url)
     if website is None:
         abort(404)
@@ -19,4 +21,4 @@ def teardown_db(exception):
     storage.close()
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port='5000')
+    app.run(host='0.0.0.0', port=5000)

@@ -1,4 +1,4 @@
-# Amberjacked ![image](https://github.com/srinitude/amberjack/blob/master/web_static/images/32x32.png)
+# Amberjacked ![image](https://github.com/srinitude/amberjack/blob/master/web_flask/templates/images/32x32.png)
 
 ### Description
 Amberjacked allows you to shorten links to optimize customer experience. Visit Amberjack at https://amberjack.holberton.us

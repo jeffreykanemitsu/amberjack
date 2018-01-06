@@ -6,6 +6,9 @@ from models.website import Website
 app = Flask('web_flask')
 
 @app.route('/', methods=['GET'], strict_slashes=False)
+def get_index():
+    return render_template("index.html")
+
 @app.route('/<string:short_url>', methods=['GET'], strict_slashes=False)
 def get_redirection(short_url=None):
     """redirect to long url"""

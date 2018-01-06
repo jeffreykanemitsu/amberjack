@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+   <meta charset="utf-8">
+   <title>Amberjack</title>
+   <link rel="stylesheet" href="styles/common.css">
+   <link rel="stylesheet" href="styles/header.css">
+   <link rel="stylesheet" href="styles/footer.css">
+   <link rel="icon" href="images/32x32.png" type="image/png">
+   <style>
+    body {
+	   background-image: url("https://ak8.picdn.net/shutterstock/videos/22682398/thumb/1.jpg?i10c=img.resize(height:160)");
+	   background-repeat: repeat-x;
+    }
+   </style> 
+   </head>
+  <body>
+   <header>
+    <img src="images/icon.png" alt="" />
+    <h1> Amberjack</h1>
+   </header>
+   <body>
+    <div class="submit">
+      <h3> Get Jacked Up </h3>
+      <form action="http://amberjack.holberton.us" method="post">
+        <input type="url" placeholder="Paste a link">
+        <input type="submit" class="btn" value="Shrink">
+      </form>
+  </div>
+   </body>
+   <footer>
+     <p>
+       Holberton School
+     </p>
+   </footer>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+   <script>
+     $(document).ready(function() {
+         $('form').submit(function(event) {
+
+             var formData = {
+                 'short_url': $('input').val(),
+             };
+
+             $.ajax({
+                 type        : 'POST',
+                 url         : 'http://amberjack.holberton.us',
+                 data        : formData,
+                 dataType    : 'json',
+                 encode      : true
+             })
+             .done(function(data) {
+                 console.log(data);
+             });
+             event.preventDefault();
+         });
+     });
+   </script>
+  </body>
+</html>
